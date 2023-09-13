@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
+  name: convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
+      app: FUNCTION_CONVERT_TO_SAP_PP_ORDER_CONF_FROM_DPFM_PP_ORDER_CONF
+  template:
+    metadata:
+      labels:
+        run: convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
+        app: FUNCTION_CONVERT_TO_SAP_PP_ORDER_CONF_FROM_DPFM_PP_ORDER_CONF
+    spec:
+      hostname: convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
+      containers:
+        - name: convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
+          image: latonaio/convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
+          imagePullPolicy: Always
+          env:
+            - name: "RMQ_QUEUE_FROM"
+              value: "convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf-queue-from"
+            - name: "RMQ_QUEUE_TO"
+              value: "sap-api-integrations-production-order-conf-creates-queue-from"
+            - name: "MYSQL_DB_NAME"
+              value: "DataPlatformMastersAndTransactionsMysqlKube"
+          envFrom:
+            - configMapRef:
+                name: env-config
+            - secretRef:
+                name: env-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
+  name: convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
+spec:
+  selector:
+    run: convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
+  type: NodePort
+  ports:
+    - name: api
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+      nodePort: 30904

@@ -1,0 +1,29 @@
+{
+  "connection_key": "",
+  "result": false,
+  "redis_key": "",
+  "filepath": "",
+  "api_status_code": 0,
+  "runtime_session_id": "boi9ar543dg91ipdnspi099u231280ab0v8af0ew",
+  "business_partner": null,
+  "service_label": "SAPProductionOrderConfCreates",
+  "api_type": "",
+  "ProductionOrderConfirmation": {
+    "OrderID": "1000001",
+    "Sequence": "0",
+    "OrderType": "PP01",
+    "ConfirmationText": null,
+    "ConfirmationYieldQuantity": null,
+    "ConfirmationScrapQuantity": null,
+    "ConfirmationGroup": "1",
+    "Language": "",
+    "Material": "5",
+    "Plant": "0001",
+    "WorkCenter": ""
+  },
+  "api_schema": "SAPProductionOrderConfCreates",
+  "accepter": null,
+  "deleted": false,
+  "api_processing_result": true,
+  "api_processing_error": ""
+}
