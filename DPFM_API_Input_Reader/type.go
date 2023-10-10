@@ -13,7 +13,6 @@ type SDC struct {
 	Message           struct {
 		Header *Header `json:"Header"`
 	} `json:"message"`
-	//Header              Header   `json:"ProductionOrderConfirmation"`
 	APISchema           string   `json:"api_schema"`
 	Accepter            []string `json:"accepter"`
 	Deleted             bool     `json:"deleted"`
@@ -38,7 +37,7 @@ type Header struct {
 	ConfirmationEntryDate                    *string  `json:"ConfirmationEntryDate"`
 	ConfirmationEntryTime                    *string  `json:"ConfirmationEntryTime"`
 	ConfirmationText                         *string  `json:"ConfirmationText"`
-	IsFinalConfirmation                      *string  `json:"IsFinalConfirmation"`
+	IsFinalConfirmation                      *bool	  `json:"IsFinalConfirmation"`
 	WorkCenter                               *int     `json:"WorkCenter"`
 	EmployeeIDWhoConfirmed                   *int     `json:"EmployeeIDWhoConfirmed"`
 	ConfirmedExecutionStartDate              *string  `json:"ConfirmedExecutionStartDate"`

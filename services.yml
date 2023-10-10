@@ -9,12 +9,12 @@ spec:
   selector:
     matchLabels:
       run: convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
-      app: FUNCTION_CONVERT_TO_SAP_PP_ORDER_CONF_FROM_DPFM_PP_ORDER_CONF
+      app: FUNCTION_CONVERT_TO_SAP_PRODUCTION_ORDER_CONF_FROM_DPFM_PRODUCTION_ORDER_CONF
   template:
     metadata:
       labels:
         run: convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
-        app: FUNCTION_CONVERT_TO_SAP_PP_ORDER_CONF_FROM_DPFM_PP_ORDER_CONF
+        app: FUNCTION_CONVERT_TO_SAP_PRODUCTION_ORDER_CONF_FROM_DPFM_PRODUCTION_ORDER_CONF
     spec:
       hostname: convert-to-sap-pp-order-conf-from-dpfm-pp-order-conf
       containers:
